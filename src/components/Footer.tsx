@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Footer = () => {
   return (
     <footer className="bg-[#F03838] w-full flex flex-col">
