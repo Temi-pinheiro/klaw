@@ -1,6 +1,6 @@
 const SITE_NAME = 'Klaw';
 const SITE_URL = 'https://klaw.build';
-const DEFAULT_AUTHOR = 'The Klaws';
+const DEFAULT_AUTHOR = 'Klaw';
 const DEFAULT_IMAGE =
   'https://res.cloudinary.com/dwvxxjgfm/image/upload/v1788223088/klaw__cxxaom.png';
 const DEFAULT_ICON =
