@@ -1,0 +1,21 @@
+# The Start build emits the static, prerendered site into dist/client (the old
+# SPA build wrote straight to dist). Netlify must publish that folder or it
+# will serve nothing.
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Prerendered HTML is content-hashed only at the asset level, so the documents
+# themselves must stay revalidated while /assets/* can be cached forever.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

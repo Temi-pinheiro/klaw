@@ -3,65 +3,13 @@ import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
   component: Home,
-  head: () => ({
-    meta: [
-      { title: 'Build with Klaw' },
-      {
-        name: 'description',
-        content:
-          'We’re a global strategic creative studio. We partner with early stage founders to bring their ideas to life.',
-      },
-      { name: 'author', content: 'Klaw' },
-      { name: 'robots', content: 'index, follow' },
-      { property: 'og:title', content: 'Build with Klaw' },
-      {
-        property: 'og:description',
-        content:
-          'We’re a global strategic creative studio. We partner with early stage founders to bring their ideas to life.',
-      },
-      {
-        property: 'og:url',
-        content: new URL('/', 'https://klaw.build').toString(),
-      },
-      { property: 'og:site_name', content: 'Klaw' },
-      {
-        property: 'og:image',
-        content:
-          'https://res.cloudinary.com/dwvxxjgfm/image/upload/v1788223088/klaw__cxxaom.png',
-      },
-      // { property: 'og:image:width', content: String(800) },
-      // { property: 'og:image:height', content: String(800) },
-      { property: 'og:locale', content: 'en_US' },
-      { property: 'og:type', content: 'website' },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
-      { name: 'twitter:title', content: 'Build with Klaw' },
-      {
-        name: 'twitter:description',
-        content:
-          'We’re a global strategic creative studio. We partner with early stage founders to bring their ideas to life.',
-      },
-      {
-        name: 'twitter:image',
-        content:
-          'https://res.cloudinary.com/dwvxxjgfm/image/upload/v1788223088/klaw__cxxaom.png',
-      },
-      { name: 'twitter:creator', content: '@ndmhjt' },
-    ],
-    links: [
-      { rel: 'canonical', href: new URL('/', 'https://klaw.build').toString() },
-      {
-        rel: 'icon',
-        href: 'https://res.cloudinary.com/dwvxxjgfm/image/upload/v1788223038/logo_fussdu.png',
-      },
-      {
-        rel: 'shortcut icon',
-        href: 'https://res.cloudinary.com/dwvxxjgfm/image/upload/v1788223038/logo_fussdu.png',
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: 'Build with Klaw',
+      description:
+        'We’re a global strategic creative studio. We partner with early stage founders to bring their ideas to life.',
+      path: '/',
+    }),
 });
 
 function Home() {
